@@ -654,6 +654,7 @@ class CtpTdApi(TdApi):
         err.gatewayName = self.gatewayName
         err.errorID = error['ErrorID']
         err.errorMsg = error['ErrorMsg'].decode('gbk')
+        err.rawData = { 'function':'onRspOrderAction', 'data':data }
         self.gateway.onError(err)
         
     #----------------------------------------------------------------------
